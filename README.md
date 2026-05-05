@@ -1,6 +1,6 @@
-# Gianni Plumbing & Drain Demo
+# Honest Drain Demo
 
-Static demo website for Gianni Plumbing & Drain.
+Static demo website for Honest Drain.
 
 ## GitHub Pages
 

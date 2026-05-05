@@ -1,7 +1,7 @@
 :root {
   --ink: #13202c;
   --muted: #5d6a75;
-  --blue: #073c79;
+  --blue: #1b1464;
   --blue-2: #0d5aa7;
   --teal: #087f86;
   --yellow: #f6c83f;
@@ -135,40 +135,17 @@ textarea {
 .brand {
   display: inline-flex;
   align-items: center;
-  gap: 10px;
   min-width: max-content;
 }
 
-.brand__mark {
-  display: grid;
-  place-items: center;
-  width: 46px;
-  height: 46px;
-  border-radius: var(--radius);
-  background: var(--yellow);
-  color: var(--blue);
-  font-weight: 900;
-  letter-spacing: 0;
-  box-shadow: inset 0 -4px 0 rgba(0, 0, 0, 0.09);
-}
-
-.brand strong,
-.brand em {
+.brand__logo {
   display: block;
+  width: auto;
+  height: 60px;
 }
 
-.brand strong {
-  font-size: 1.25rem;
-  line-height: 1;
-  color: var(--blue);
-}
-
-.brand em {
-  font-size: 0.78rem;
-  font-style: normal;
-  color: var(--muted);
-  text-transform: uppercase;
-  font-weight: 800;
+.brand--footer .brand__logo {
+  filter: brightness(0) invert(1);
 }
 
 .primary-nav ul {
@@ -302,6 +279,12 @@ textarea {
   background-image: linear-gradient(90deg, rgba(6, 20, 34, 0.9), rgba(6, 20, 34, 0.62), rgba(6, 20, 34, 0.16)), var(--hero-img);
   background-size: cover;
   background-position: center;
+}
+
+.hero--home,
+.page-hero--brand {
+  background-image: linear-gradient(90deg, rgba(6, 20, 34, 0.95), rgba(6, 20, 34, 0.82), rgba(6, 20, 34, 0.5)), var(--hero-img);
+  background-position: 58% center;
 }
 
 .hero {
@@ -1668,17 +1651,8 @@ cite {
     max-height: calc(100vh - 150px);
   }
 
-  .brand__mark {
-    width: 40px;
-    height: 40px;
-  }
-
-  .brand strong {
-    font-size: 1.05rem;
-  }
-
-  .brand em {
-    font-size: 0.68rem;
+  .brand__logo {
+    height: 52px;
   }
 
   .nav-shell > .button {
@@ -2002,8 +1976,8 @@ cite {
     font-size: 0.76rem;
   }
 
-  .brand em {
-    font-size: 0.64rem;
+  .brand__logo {
+    height: 48px;
   }
 
   .toc {
