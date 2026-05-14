@@ -1,16 +1,49 @@
 # Honest Drain Demo
 
-Static demo website for Honest Drain.
+Static demo website for Honest Drain, built with Eleventy.
+
+## Development
+
+Editable source lives in `src/`. Eleventy builds the deployable static site into `_site/`.
+
+Install dependencies once:
+
+```sh
+npm install
+```
+
+Run a local dev server:
+
+```sh
+npm run dev
+```
+
+Build the static site:
+
+```sh
+npm run build
+```
+
+The generated site is written to `_site/`.
+
+## Shared Site Pieces
+
+- `src/_data/site.json` — business name, phone, footer copy, and global constants
+- `src/_data/navigation.json` — primary nav, mega menus, and footer links
+- `src/_includes/partials/head.njk` — shared metadata, assets, OpenGraph, and JSON-LD output
+- `src/_includes/partials/header.njk` — one central header/nav
+- `src/_includes/partials/footer.njk` — one central footer
+- `src/_includes/layouts/base.njk` — shared page shell
+- `src/sitemap.xml.njk` — generated XML sitemap from page front matter
 
 ## GitHub Pages
 
-This site is built with plain HTML, CSS, and JavaScript, so it can be hosted from the repository root with GitHub Pages.
+This site builds to plain HTML, CSS, and JavaScript, so the deployed site stays static.
 
 Recommended GitHub Pages settings:
 
-- Source: `Deploy from a branch`
-- Branch: `main`
-- Folder: `/ (root)`
+- Source: `GitHub Actions`
+- Workflow: `.github/workflows/deploy.yml`
 
 ## Site Structure
 
@@ -32,6 +65,6 @@ Each service URL resolves to a directory with an `index.html`, so the URLs read 
 
 ## Demo Notes
 
-- Phone is `(401) 593-5553`; update the `tel:` and display strings in the HTML/JS if it ever changes.
+- Phone is `(401) 593-5553`; update `src/_data/site.json` if it ever changes.
 - The contact form is frontend-only until connected to a form service or backend.
 - Real business details, service areas, testimonials, and original photography should be added before launch.

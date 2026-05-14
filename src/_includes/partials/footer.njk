@@ -1,0 +1,40 @@
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <div>
+          {% if not simpleFooter %}
+          <a class="brand brand--footer" href="{{ '/' | url }}" aria-label="{{ site.name }} home">
+            <img class="brand__logo" src="{{ '/assets/brand/honest-drain-logo-white.svg' | url }}" alt="" aria-hidden="true">
+            <span class="visually-hidden">{{ site.name }}</span>
+          </a>
+          {% endif %}
+          <p>{{ site.footerDescription }}</p>
+        </div>
+        <div>
+          <h2>Services</h2>
+          {% for item in navigation.footerServices %}
+          {% if simpleFooter and item.label == "Why Honest Drain" %}{% else %}
+          <a href="{{ item.url | url }}">{{ item.label | safe }}</a>
+          {% endif %}
+          {% endfor %}
+        </div>
+        <div>
+          <h2>Company</h2>
+          {% for item in navigation.footerCompany %}
+          <a href="{{ item.url | url }}">{{ item.label | safe }}</a>
+          {% endfor %}
+        </div>
+        <div>
+          <h2>Call Anytime</h2>
+          <a class="footer-phone" href="{{ site.phoneHref }}">{{ site.phoneDisplay }}</a>
+          {% if not simpleFooter %}
+          <p>Serving local homeowners, businesses, restaurants, and property managers.</p>
+          {% endif %}
+        </div>
+      </div>
+      <div class="container footer-bottom">
+        <span>{{ site.copyright }}</span>
+        {% if not simpleFooter %}
+        <span>{{ site.footerTagline }}</span>
+        {% endif %}
+      </div>
+    </footer>

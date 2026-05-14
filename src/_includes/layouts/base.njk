@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="en">
+{% include "partials/head.njk" %}
+  <body>
+    {% if not bare %}
+    <a class="skip-link" href="#main">Skip to content</a>
+    {% include "partials/header.njk" %}
+    {% endif %}
+{{ content | safe }}
+    {% if not bare %}
+    {% include "partials/footer.njk" %}
+    <script src="{{ '/assets/script.js' | url }}"></script>
+    {% endif %}
+  </body>
+</html>

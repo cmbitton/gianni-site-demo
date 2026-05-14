@@ -1,0 +1,43 @@
+    <header class="site-header">
+      <div class="top-bar">
+        <div class="container top-bar__inner">
+          <span>{{ site.topBarText }}</span>
+          <a href="{{ site.phoneHref }}">Call {{ site.phoneDisplay }}</a>
+        </div>
+      </div>
+      <div class="container nav-shell">
+        <a class="brand" href="{{ '/' | url }}" aria-label="{{ site.name }} home">
+          <img class="brand__logo" src="{{ '/assets/brand/honest-drain-logo.svg' | url }}" alt="" aria-hidden="true">
+          <span class="visually-hidden">{{ site.name }}</span>
+        </a>
+        {% if simpleHeader %}
+        <a class="button button--small" href="{{ '/contact.html' | url }}">Book Online</a>
+        {% else %}
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-nav">
+          <span></span><span></span><span></span>
+          <span class="visually-hidden">Menu</span>
+        </button>
+        <nav class="primary-nav" id="primary-nav" aria-label="Primary navigation">
+          <ul>
+            {% for item in navigation.primary %}
+            <li{% if item.columns %} class="has-menu"{% endif %}>
+              <a href="{{ item.url | url }}" class="{% if item.columns %}has-menu__link{% endif %}{% if page.url | isActive(item.url) %}{% if item.columns %} {% endif %}is-active{% endif %}">{{ item.label | safe }}</a>
+              {% if item.columns %}
+              <div class="mega-menu {{ item.menuClass }}" role="menu">
+                {% for column in item.columns %}
+                <div class="mega-col">
+                  {% for link in column.links %}
+                  <a{% if link.class %} class="{{ link.class }}"{% endif %} href="{{ link.url | url }}">{{ link.label | safe }}</a>
+                  {% endfor %}
+                </div>
+                {% endfor %}
+              </div>
+              {% endif %}
+            </li>
+            {% endfor %}
+          </ul>
+        </nav>
+        <a class="button button--small" href="{{ '/contact.html' | url }}">Book Online</a>
+        {% endif %}
+      </div>
+    </header>

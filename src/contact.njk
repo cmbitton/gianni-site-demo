@@ -1,0 +1,81 @@
+---
+layout: layouts/base.njk
+permalink: "/contact.html"
+title: "Contact & Book Service | Honest Drain"
+description: "Book plumbing, drain cleaning, sewer service, commercial maintenance, or emergency service with Honest Drain."
+canonical: "https://cmbitton.github.io/gianni-site-demo/contact.html"
+robots: "index,follow"
+ogTitle: "Contact & Book Service | Honest Drain"
+ogDescription: "Book plumbing, drain cleaning, sewer service, commercial maintenance, or emergency service with Honest Drain."
+ogType: "website"
+ogUrl: "https://cmbitton.github.io/gianni-site-demo/contact.html"
+sitemap:
+  order: 2
+  lastmod: "2026-05-08"
+  changefreq: "monthly"
+  priority: "0.8"
+schema:
+  - |-
+    {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://cmbitton.github.io/gianni-site-demo/"}, {"@type": "ListItem", "position": 2, "name": "Contact", "item": "https://cmbitton.github.io/gianni-site-demo/contact.html"}]}
+  - |-
+    {"@context": "https://schema.org", "@type": "ContactPage", "name": "Contact Honest Drain", "url": "https://cmbitton.github.io/gianni-site-demo/contact.html"}
+---
+<main id="main">
+      <section class="page-hero" style="--hero-img: url('https://images.pexels.com/photos/16509869/pexels-photo-16509869.jpeg?auto=compress&cs=tinysrgb&w=1800');">
+        <div class="container">
+          <p class="eyebrow">Book online</p>
+          <h1>Tell Honest Drain what is happening</h1>
+          <p>For emergencies, call now. For standard service, share the details Honest Drain needs to give an honest next step and the next available appointment window.</p>
+        </div>
+      </section>
+      <section class="section">
+        <div class="container contact-layout">
+          <form class="contact-form" action="#" method="post">
+            <div class="form-row">
+              <label for="name">Name</label>
+              <input id="name" name="name" type="text" autocomplete="name" required>
+            </div>
+            <div class="form-row">
+              <label for="phone">Phone</label>
+              <input id="phone" name="phone" type="tel" autocomplete="tel" required>
+            </div>
+            <div class="form-row">
+              <label for="email">Email</label>
+              <input id="email" name="email" type="email" autocomplete="email">
+            </div>
+            <div class="form-row">
+              <label for="service">Service Needed</label>
+              <select id="service" name="service">
+                <option>Emergency plumbing</option>
+                <option>Drain cleaning</option>
+                <option>Sewer repair</option>
+                <option>Hydro jetting</option>
+                <option>Commercial service</option>
+                <option>Maintenance plan</option>
+              </select>
+            </div>
+            <div class="form-row">
+              <label for="message">What is going on?</label>
+              <textarea id="message" name="message" rows="6" required></textarea>
+            </div>
+            <button class="button" type="submit">Send Request</button>
+            <p class="form-note" aria-live="polite"></p>
+          </form>
+          <aside class="contact-card">
+            <p class="eyebrow">Call anytime</p>
+            <a class="contact-phone" href="tel:14015935553">(401) 593-5553</a>
+            <p>For active leaks, sewage backups, or water near electrical systems, call first so the issue can be triaged quickly and honestly.</p>
+            <hr>
+            <h2>Service area</h2>
+            <p>Serving local homeowners, commercial spaces, restaurants, and property managers with honest plumbing, drain, and sewer support.</p>
+            <h2>Emergency signs</h2>
+            <ul class="check-list">
+              <li>Water or sewage backing up</li>
+              <li>More than one fixture clogged</li>
+              <li>Active leak or burst pipe</li>
+              <li>Water near electrical systems</li>
+            </ul>
+          </aside>
+        </div>
+      </section>
+    </main>
