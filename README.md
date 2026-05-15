@@ -60,7 +60,7 @@ Each service URL resolves to a directory with an `index.html`, so the URLs read 
 - Canonical URLs, OpenGraph tags, and JSON-LD on every page
 - BreadcrumbList JSON-LD on sub-pages
 - Service / OfferCatalog JSON-LD on service pages
-- LocalBusiness (Plumber) and WebSite JSON-LD on the home page
+- LocalBusiness and WebSite JSON-LD on the home page
 - FAQPage JSON-LD on the FAQ page
 
 ## Demo Notes
