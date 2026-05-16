@@ -27,8 +27,7 @@
             { "label": "Exterior Drain Services", "url": "/drain-and-sewer-services/exterior-drain-services/", "class": "mega-col__head" },
             { "label": "Driveway Drain Cleaning", "url": "/drain-and-sewer-services/exterior-drain-services/driveway-drain-cleaning/" },
             { "label": "Landscape Drain Services", "url": "/drain-and-sewer-services/exterior-drain-services/landscape-drain-services/" },
-            { "label": "Septic Services", "url": "/drain-and-sewer-services/septic-services/", "class": "mega-col__head mega-col__head--sub" },
-            { "label": "Septic Tank Cleaning", "url": "/drain-and-sewer-services/septic-services/septic-tank-cleaning/" }
+            { "label": "Septic Line Cleaning", "url": "/drain-and-sewer-services/septic-services/", "class": "mega-col__head mega-col__head--sub" }
           ]
         },
         {
