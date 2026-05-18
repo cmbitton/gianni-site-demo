@@ -2448,6 +2448,13 @@ cite {
     justify-content: center;
   }
 
+  .mid-cta .hero__actions .button {
+    flex: 0 1 auto;
+    min-height: 42px;
+    padding: 10px 18px;
+    font-size: 0.9rem;
+  }
+
   .symptom-cards {
     grid-template-columns: 1fr;
     gap: 10px;
