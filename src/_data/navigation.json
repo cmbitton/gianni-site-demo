@@ -81,6 +81,8 @@
     { "label": "About", "url": "/about.html" },
     { "label": "FAQ", "url": "/faq.html" },
     { "label": "Contact", "url": "/contact.html" },
-    { "label": "Site Map", "url": "/site-map.html" }
+    { "label": "Site Map", "url": "/site-map.html" },
+    { "label": "Privacy Policy", "url": "/privacy-policy.html" },
+    { "label": "Terms &amp; Conditions", "url": "/terms-and-conditions.html" }
   ]
 }
