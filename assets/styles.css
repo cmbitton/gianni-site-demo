@@ -646,6 +646,27 @@ h3 {
   padding: clamp(52px, 7vw, 84px) 0;
 }
 
+.area-tags {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.area-tags li {
+  display: inline-flex;
+  align-items: center;
+  padding: 8px 16px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: #fff;
+  color: var(--blue);
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
 .section-heading {
   max-width: 780px;
   margin-bottom: 36px;
