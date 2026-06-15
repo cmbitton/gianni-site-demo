@@ -21,7 +21,7 @@ schema:
     {"@context": "https://schema.org", "@type": "WebSite", "name": "Honest Drain", "url": "https://cmbitton.github.io/gianni-site-demo/", "potentialAction": {"@type": "SearchAction", "target": "https://cmbitton.github.io/gianni-site-demo/site-map.html?q={search_term_string}", "query-input": "required name=search_term_string"}}
 ---
 <main id="main">
-      <section class="hero hero--home" style="--hero-img: url('images/honest-drain-van-brand.jpg');">
+      <section class="hero hero--home" style="--hero-img: url('{{ '/assets/images/service/home-hero-van.jpg' | url }}'); --hero-pos: 62% center;">
         <div class="container hero__content">
           <p class="eyebrow">Honest answers when water will not wait</p>
           <h1>Drain & Sewer Help Without the Runaround</h1>
@@ -73,7 +73,7 @@ schema:
             </div>
           </div>
           <figure class="image-panel">
-            <img src="https://images.pexels.com/photos/32588548/pexels-photo-32588548.jpeg?auto=compress&cs=tinysrgb&w=1100" alt="Drain service technician inspecting a pipe with a wrench" loading="lazy">
+            <img src="{{ '/assets/images/service/drain-cleaning-under-sink.jpg' | url }}" alt="Honest Drain technician inspecting piping under a kitchen sink" loading="lazy">
           </figure>
         </div>
       </section>
@@ -165,17 +165,17 @@ schema:
           </div>
           <div class="customer-grid">
             <a href="about.html#customers">
-              <img src="https://images.pexels.com/photos/16509869/pexels-photo-16509869.jpeg?auto=compress&cs=tinysrgb&w=900" alt="Commercial drain repair under a sink" loading="lazy">
+              <img src="{{ '/assets/images/service/under-sink-drain-work.jpg' | url }}" alt="Honest Drain technician clearing a kitchen sink line" loading="lazy">
               <h3>Food & Hospitality</h3>
               <p>Grease, floor drains, backups, and urgent repairs that protect service hours.</p>
             </a>
             <a href="about.html#customers">
-              <img src="https://images.pexels.com/photos/7937300/pexels-photo-7937300.jpeg?auto=compress&cs=tinysrgb&w=900" alt="Mechanical drain service equipment with pressure gauge" loading="lazy">
+              <img src="{{ '/assets/images/service/sewer-camera-inspection.jpg' | url }}" alt="Honest Drain sewer camera inspection equipment set up outside" loading="lazy">
               <h3>Property & Facility Managers</h3>
               <p>Preventive schedules, documentation, and fast dispatch for tenants.</p>
             </a>
             <a href="about.html#customers">
-              <img src="https://images.unsplash.com/photo-1585704032915-c3400ca199e7?auto=format&fit=crop&w=900&q=80" alt="Bathroom faucet and drain" loading="lazy">
+              <img src="{{ '/assets/images/service/local-residential-van.jpg' | url }}" alt="Honest Drain service van parked at a residential appointment" loading="lazy">
               <h3>Residential Homeowners</h3>
               <p>Friendly service for household drains, sewer lines, sump pumps, and backup prevention.</p>
             </a>
