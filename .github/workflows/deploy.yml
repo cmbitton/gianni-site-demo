@@ -35,6 +35,9 @@ jobs:
 
       - name: Build
         run: npm run build
+        env:
+          SITE_URL: https://cmbitton.github.io/gianni-site-demo/
+          PATH_PREFIX: /gianni-site-demo/
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v4

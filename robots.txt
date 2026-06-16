@@ -1,6 +1,0 @@
-User-agent: *
-Allow: /
-Disallow: /services.html
-Disallow: /commercial.html
-
-Sitemap: https://cmbitton.github.io/gianni-site-demo/sitemap.xml

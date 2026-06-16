@@ -1,0 +1,12 @@
+---
+permalink: /robots.txt
+layout: false
+eleventyExcludeFromCollections: true
+sitemap: false
+---
+User-agent: *
+Allow: /
+Disallow: /services.html
+Disallow: /commercial.html
+
+Sitemap: {{ "/sitemap.xml" | absoluteUrl }}

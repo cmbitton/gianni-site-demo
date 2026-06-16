@@ -3,18 +3,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{{ title | safe }}</title>
     {% if description %}<meta name="description" content="{{ description | safe }}">{% endif %}
-    {% if canonical %}<link rel="canonical" href="{{ canonical }}">{% endif %}
+    {% if canonical %}<link rel="canonical" href="{{ canonical | absoluteUrl }}">{% endif %}
     <meta name="robots" content="{{ robots or 'index,follow' }}">
     {% if og != false %}
     <meta property="og:title" content="{{ (ogTitle or title) | safe }}">
     {% if ogDescription or description %}<meta property="og:description" content="{{ (ogDescription or description) | safe }}">{% endif %}
     <meta property="og:type" content="{{ ogType or 'website' }}">
-    {% if ogUrl or canonical %}<meta property="og:url" content="{{ ogUrl or canonical }}">{% endif %}
+    {% if ogUrl or canonical %}<meta property="og:url" content="{{ (ogUrl or canonical) | absoluteUrl }}">{% endif %}
     {% endif %}
     {{ headExtra | safe }}
     <link rel="icon" href="{{ '/assets/favicon.svg' | url }}" type="image/svg+xml">
     <link rel="stylesheet" href="{{ '/assets/styles.css' | url }}">
     {% for item in schema %}
-    <script type="application/ld+json">{{ item | safe }}</script>
+    <script type="application/ld+json">{{ item | resolveSiteUrl | safe }}</script>
     {% endfor %}
   </head>

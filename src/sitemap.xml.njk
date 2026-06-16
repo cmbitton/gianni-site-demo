@@ -8,7 +8,7 @@ sitemap: false
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 {% for entry in collections.all | sitemapPages %}
   <url>
-    <loc>{{ entry.data.canonical or (entry.url | absoluteUrl) }}</loc>
+    <loc>{{ (entry.data.canonical or entry.url) | absoluteUrl }}</loc>
     <lastmod>{{ entry.data.sitemap.lastmod }}</lastmod>
     <changefreq>{{ entry.data.sitemap.changefreq }}</changefreq>
     <priority>{{ entry.data.sitemap.priority }}</priority>

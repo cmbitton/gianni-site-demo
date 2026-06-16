@@ -1,8 +1,22 @@
-const SITE_URL = "https://cmbitton.github.io/gianni-site-demo/";
+const site = require("./src/_data/site.cjs");
+
+const SITE_URL_TOKEN = "__SITE_URL__";
+const SITE_URL = site.url;
+const SITE_URL_BASE = SITE_URL.replace(/\/+$/, "");
+const PATH_PREFIX = normalizePathPrefix(process.env.PATH_PREFIX);
+
+function normalizePathPrefix(prefix) {
+  if (!prefix || prefix === "/") return "/";
+  return `/${String(prefix).replace(/^\/+|\/+$/g, "")}/`;
+}
+
+function resolveSiteUrl(value) {
+  if (value == null) return value;
+  return String(value).replaceAll(SITE_URL_TOKEN, SITE_URL_BASE);
+}
 
 module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy({ assets: "assets" });
-  eleventyConfig.addPassthroughCopy({ "robots.txt": "robots.txt" });
   eleventyConfig.addPassthroughCopy({ ".nojekyll": ".nojekyll" });
 
   eleventyConfig.addFilter("isActive", function (currentUrl, targetUrl) {
@@ -21,12 +35,17 @@ module.exports = function (eleventyConfig) {
       });
   });
 
+  eleventyConfig.addFilter("resolveSiteUrl", resolveSiteUrl);
+
   eleventyConfig.addFilter("absoluteUrl", function (url) {
-    return new URL(String(url).replace(/^\//, ""), SITE_URL).toString();
+    const resolvedUrl = resolveSiteUrl(url);
+    if (!resolvedUrl) return resolvedUrl;
+    if (/^https?:\/\//i.test(resolvedUrl)) return resolvedUrl;
+    return new URL(String(resolvedUrl).replace(/^\//, ""), SITE_URL).toString();
   });
 
   return {
-    pathPrefix: "/gianni-site-demo/",
+    pathPrefix: PATH_PREFIX,
     dir: {
       input: "src",
       output: "_site",
