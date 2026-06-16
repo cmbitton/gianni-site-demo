@@ -1,6 +1,9 @@
 audit-*.png
 .DS_Store
 Thumbs.db
+.agents/
+.claude/
+.codex/
 node_modules/
 _site/
 additional-photos/
