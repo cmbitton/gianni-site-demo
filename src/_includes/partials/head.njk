@@ -6,10 +6,31 @@
     {% if canonical %}<link rel="canonical" href="{{ canonical | absoluteUrl }}">{% endif %}
     <meta name="robots" content="{{ robots or 'index,follow' }}">
     {% if og != false %}
-    <meta property="og:title" content="{{ (ogTitle or title) | safe }}">
-    {% if ogDescription or description %}<meta property="og:description" content="{{ (ogDescription or description) | safe }}">{% endif %}
+    {% set metaTitle = ogTitle or title %}
+    {% set metaDescription = ogDescription or description %}
+    {% set metaUrl = ogUrl or canonical %}
+    {% set metaImage = ogImage or site.socialImage %}
+    {% set metaImageWidth = ogImageWidth or site.socialImageWidth %}
+    {% set metaImageHeight = ogImageHeight or site.socialImageHeight %}
+    {% set metaImageAlt = ogImageAlt or site.socialImageAlt %}
+    <meta property="og:site_name" content="{{ site.name }}">
+    <meta property="og:title" content="{{ metaTitle | safe }}">
+    {% if metaDescription %}<meta property="og:description" content="{{ metaDescription | safe }}">{% endif %}
     <meta property="og:type" content="{{ ogType or 'website' }}">
-    {% if ogUrl or canonical %}<meta property="og:url" content="{{ (ogUrl or canonical) | absoluteUrl }}">{% endif %}
+    {% if metaUrl %}<meta property="og:url" content="{{ metaUrl | absoluteUrl }}">{% endif %}
+    {% if metaImage %}
+    <meta property="og:image" content="{{ metaImage | absoluteUrl }}">
+    <meta property="og:image:secure_url" content="{{ metaImage | absoluteUrl }}">
+    <meta property="og:image:type" content="{{ ogImageType or site.socialImageType or 'image/png' }}">
+    {% if metaImageWidth %}<meta property="og:image:width" content="{{ metaImageWidth }}">{% endif %}
+    {% if metaImageHeight %}<meta property="og:image:height" content="{{ metaImageHeight }}">{% endif %}
+    {% if metaImageAlt %}<meta property="og:image:alt" content="{{ metaImageAlt }}">{% endif %}
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="{{ metaTitle | safe }}">
+    {% if metaDescription %}<meta name="twitter:description" content="{{ metaDescription | safe }}">{% endif %}
+    <meta name="twitter:image" content="{{ metaImage | absoluteUrl }}">
+    {% if metaImageAlt %}<meta name="twitter:image:alt" content="{{ metaImageAlt }}">{% endif %}
+    {% endif %}
     {% endif %}
     {{ headExtra | safe }}
     <link rel="icon" href="{{ '/assets/favicon.svg' | url }}" type="image/svg+xml">
